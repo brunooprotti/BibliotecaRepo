@@ -10,4 +10,18 @@
     <ProjectReference Include="..\Biblioteca.Domain\Biblioteca.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Autor\Query\" />
+    <Folder Include="Libro\Command\" />
+    <Folder Include="Libro\Query\" />
+    <Folder Include="Prestamo\Command\" />
+    <Folder Include="Prestamo\Query\" />
+    <Folder Include="Usuario\Command\" />
+    <Folder Include="Usuario\Query\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.5.0" />
+  </ItemGroup>
+
 </Project>

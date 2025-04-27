@@ -1,6 +1,6 @@
 ﻿namespace Biblioteca.Domain.Entities;
 
-public class Autor
+public sealed class Autor
 {
     public int Id { get; set; }
     public string? Nombre { get; private set; }
