@@ -6,6 +6,7 @@ public sealed class LibroPrestamo
     public Libro? Libro { get; private set; }
     public int PrestamoId { get; private set; }
     public Prestamo? Prestamo { get; private set; }
+
     private LibroPrestamo() { }
     private LibroPrestamo(int libroId, int prestamoId)
     {

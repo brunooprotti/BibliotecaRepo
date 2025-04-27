@@ -1,13 +1,13 @@
-﻿using Biblioteca.Domain;
+﻿using Biblioteca.Domain.Entities;
 using Biblioteca.Domain.Entities.ValueObjects;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Biblioteca.Infrastructure.Usuario;
+namespace Biblioteca.Infrastructure.Configurations;
 
-internal sealed class UsuarioConfiguration : IEntityTypeConfiguration<Domain.Entities.Usuario>
+internal sealed class UsuarioConfiguration : IEntityTypeConfiguration<Usuario>
 {
-    public void Configure(EntityTypeBuilder<Domain.Entities.Usuario> builder)
+    public void Configure(EntityTypeBuilder<Usuario> builder)
     {
         builder.ToTable("Usuarios");
 
@@ -31,6 +31,7 @@ internal sealed class UsuarioConfiguration : IEntityTypeConfiguration<Domain.Ent
                .HasMaxLength(200)
                .IsRequired();
 
-        builder.Property(u => u.Email);
+        builder.Property(u => u.Email)
+               .HasMaxLength(50);
     }
 }

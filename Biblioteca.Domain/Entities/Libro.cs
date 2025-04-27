@@ -11,6 +11,7 @@ public class Libro
     public Genero? Genero { get; private set; }
     public int PublicationYear { get; private set; }
     public bool Disponible { get; private set; }
+    public ICollection<LibroPrestamo> LibroPrestamos { get; private set; } = new List<LibroPrestamo>();
 
     private Libro() { }
 
