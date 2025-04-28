@@ -13,12 +13,12 @@ internal sealed class LibroPrestamoConfiguration : IEntityTypeConfiguration<Libr
         builder.HasKey(lp => new { lp.LibroId, lp.PrestamoId });
 
         builder.HasOne(lp => lp.Libro)
-               .WithMany(l => l.LibroPrestamos)
+               .WithMany(l => l.Prestamos)
                .HasForeignKey(lp => lp.LibroId)
                .OnDelete(DeleteBehavior.Cascade);
 
         builder.HasOne(lp => lp.Prestamo)
-               .WithMany(p => p.LibroPrestamos)
+               .WithMany(p => p.Libros)
                .HasForeignKey(lp => lp.PrestamoId)
                .OnDelete(DeleteBehavior.Cascade);
     }

@@ -1,5 +1,5 @@
-﻿using Biblioteca.Domain.Entities;
-using Biblioteca.Domain.Entities.ValueObjects;
+﻿using Biblioteca.Domain.Autores.ValueObjects;
+using Biblioteca.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

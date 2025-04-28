@@ -1,6 +1,8 @@
-﻿using Biblioteca.Domain.Entities.ValueObjects;
+﻿using Biblioteca.Domain.Autores;
+using Biblioteca.Domain.Entities;
+using Biblioteca.Domain.Libros.ValueObjects;
 
-namespace Biblioteca.Domain.Entities;
+namespace Biblioteca.Domain.Libros;
 
 public class Libro
 {
@@ -11,7 +13,7 @@ public class Libro
     public Genero? Genero { get; private set; }
     public int PublicationYear { get; private set; }
     public bool Disponible { get; private set; }
-    public ICollection<LibroPrestamo> LibroPrestamos { get; private set; } = new List<LibroPrestamo>();
+    public List<LibroPrestamo> Prestamos { get; private set; }
 
     private Libro() { }
 

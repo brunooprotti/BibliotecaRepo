@@ -1,4 +1,4 @@
-﻿using Biblioteca.Domain.Entities;
+﻿using Biblioteca.Domain.Prestamos;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

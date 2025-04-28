@@ -1,4 +1,6 @@
-﻿namespace Biblioteca.Domain.Entities;
+﻿using Biblioteca.Domain.Libros;
+
+namespace Biblioteca.Domain.Autores;
 
 public sealed class Autor
 {

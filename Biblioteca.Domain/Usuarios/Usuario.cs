@@ -1,4 +1,5 @@
-﻿using Biblioteca.Domain.Entities.ValueObjects;
+﻿using Biblioteca.Domain.Autores.ValueObjects;
+using Biblioteca.Domain.Prestamos;
 
 namespace Biblioteca.Domain.Entities;
 

@@ -7,9 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Entities\Abstractions\**" />
-    <EmbeddedResource Remove="Entities\Abstractions\**" />
-    <None Remove="Entities\Abstractions\**" />
+    <Compile Remove="Usuarios\Abstractions\**" />
+    <EmbeddedResource Remove="Usuarios\Abstractions\**" />
+    <None Remove="Usuarios\Abstractions\**" />
   </ItemGroup>
 
 </Project>

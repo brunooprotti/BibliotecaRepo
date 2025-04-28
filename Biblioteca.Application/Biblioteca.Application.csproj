@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Autor\Query\" />
+    <Folder Include="Autores\Query\" />
     <Folder Include="Libro\Command\" />
     <Folder Include="Libro\Query\" />
     <Folder Include="Prestamo\Command\" />

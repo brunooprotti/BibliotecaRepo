@@ -1,4 +1,6 @@
-﻿namespace Biblioteca.Domain.Entities;
+﻿using Biblioteca.Domain.Entities;
+
+namespace Biblioteca.Domain.Prestamos;
 
 public class Prestamo
 {
@@ -7,8 +9,8 @@ public class Prestamo
     public DateTime FechaDevolucion { get; private set; }
     public int UsuarioId { get; private set; }
     public Usuario? Usuario { get; private set; }
-    public List<Libro> Libro { get; private set; } = null!;
-    public ICollection<LibroPrestamo> LibroPrestamos { get; private set; } = new List<LibroPrestamo>();
+    public List<LibroPrestamo> Libros { get; private set; } = null!;
+
     private Prestamo() { }
 
     private Prestamo(DateTime fechaPrestamo, DateTime fechaDevolucion, int usuarioId)
