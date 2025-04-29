@@ -4,7 +4,7 @@ using Biblioteca.Domain.Libros.ValueObjects;
 
 namespace Biblioteca.Domain.Libros;
 
-public class Libro
+public sealed class Libro
 {
     public int Id { get; private set; }
     public string? Titulo { get; private set; }
@@ -13,20 +13,20 @@ public class Libro
     public Genero? Genero { get; private set; }
     public int PublicationYear { get; private set; }
     public bool Disponible { get; private set; }
-    public List<LibroPrestamo> Prestamos { get; private set; }
+    public List<LibroPrestamo>? Prestamos { get; private set; }
 
     private Libro() { }
 
-    private Libro( string titulo, Autor autor, Genero genero, int publicationYear, bool disponible)
+    private Libro( string titulo, int autorId, Genero genero, int publicationYear, bool disponible)
     {
         Titulo = titulo;
-        Autor = autor;
+        AutorId = autorId;
         Genero = genero;
         PublicationYear = publicationYear;
         Disponible = disponible;
     }
 
-    public Libro Crear(string titulo, Autor autor, Genero genero, int publicationYear, bool disponible)
-        => new Libro(titulo, autor, genero, publicationYear, disponible);
+    public static Libro Crear(string titulo, int autorId, Genero genero, int publicationYear, bool disponible)
+        => new Libro(titulo, autorId, genero, publicationYear, disponible);
     
 }

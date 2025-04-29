@@ -1,4 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Biblioteca.Application.Autores;
+using Biblioteca.Application.Libros;
+using Biblioteca.Infrastructure.Repositories;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -12,6 +15,9 @@ public static class DependencyInjection
             ?? throw new ArgumentNullException($"{nameof(DependencyInjection)}: Connection string doesn't exists");
 
         services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
+
+        services.AddScoped<IAutorRepository,AutorRepository>();
+        services.AddScoped<ILibroRepository,LibroRepository>();
 
         return services;
     }

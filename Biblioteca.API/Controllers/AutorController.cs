@@ -1,4 +1,5 @@
 ﻿using Biblioteca.Application.Autores.Command;
+using Biblioteca.Application.Autores.Query;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,7 +11,7 @@ namespace Biblioteca.API.Controllers
     {
         private readonly IMediator _mediator;
 
-        private AutorController(IMediator mediator)
+        public AutorController(IMediator mediator)
         {
             _mediator = mediator;
         }
@@ -26,5 +27,15 @@ namespace Biblioteca.API.Controllers
             return Ok(result.Value);
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            var result = await _mediator.Send(new GetAllAutoresQuery());
+
+            if (!result.IsSuccess)
+                return BadRequest(result.Error);
+
+            return Ok(result.Value);
+        }
     }
 }

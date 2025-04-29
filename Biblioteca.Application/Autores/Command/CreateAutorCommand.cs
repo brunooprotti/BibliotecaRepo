@@ -1,5 +1,4 @@
-﻿using Biblioteca.Application.Repositories;
-using Biblioteca.Domain.Abstractions;
+﻿using Biblioteca.Domain.Abstractions;
 using Biblioteca.Domain.Autores;
 using MediatR;
 
@@ -13,7 +12,7 @@ public sealed class CreateAutorCommand : IRequest<Result<bool, Error?>>
     public string? Nacionalidad { get; set; } 
 }
 
-internal sealed class CreateAutorCommandHandler : IRequestHandler<CreateAutorCommand, Result<bool, Error?>>
+public sealed class CreateAutorCommandHandler : IRequestHandler<CreateAutorCommand, Result<bool, Error?>>
 {
     private readonly IAutorRepository _repository;
     public CreateAutorCommandHandler(IAutorRepository repository)

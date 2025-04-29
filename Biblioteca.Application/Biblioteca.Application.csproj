@@ -11,9 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Autores\Query\" />
-    <Folder Include="Libro\Command\" />
-    <Folder Include="Libro\Query\" />
     <Folder Include="Prestamo\Command\" />
     <Folder Include="Prestamo\Query\" />
     <Folder Include="Usuario\Command\" />
@@ -21,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="14.0.0" />
     <PackageReference Include="MediatR" Version="12.5.0" />
   </ItemGroup>
 

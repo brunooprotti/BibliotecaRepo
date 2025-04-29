@@ -1,4 +1,4 @@
-﻿using Biblioteca.Application.Repositories;
+﻿using Biblioteca.Application.Autores;
 using Biblioteca.Domain.Abstractions;
 using Biblioteca.Domain.Autores;
 using Biblioteca.Domain.Autores.Errors;
@@ -24,7 +24,13 @@ public sealed class AutorRepository : IAutorRepository
 
         if (autorExists)
             return Result<bool, Error?>.Failure(AutorErrorBuilder.AutorDuplicated(autor.Nombre!, autor.Apellido!));
-    
+
+        await _dbSet.AddAsync(autor);
+        var result = await _context.SaveChangesAsync(cancellationToken) ;
+
+        if (result == 0)
+            return Result<bool, Error?>.Failure(AutorErrorBuilder.AutorNotCreated(autor.Nombre,autor.Apellido)); 
+
         return Result<bool, Error?>.Success(true);
     }
 
@@ -33,9 +39,10 @@ public sealed class AutorRepository : IAutorRepository
         throw new NotImplementedException();
     }
 
-    public Task<Result<ICollection<Autor>, Error?>> Get()
+    public async Task<Result<ICollection<Autor>, Error?>> Get()
     {
-        throw new NotImplementedException();
+        var result = await _dbSet.Include(x => x.Libros).ToListAsync();
+        return Result<ICollection<Autor>,Error>.Success(result);
     }
 
     public Task<Result<bool, Error?>> Update(Autor autor, CancellationToken cancellationToken)

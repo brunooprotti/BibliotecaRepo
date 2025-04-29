@@ -1,7 +1,7 @@
 ﻿using Biblioteca.Domain.Abstractions;
 using Biblioteca.Domain.Autores;
 
-namespace Biblioteca.Application.Repositories;
+namespace Biblioteca.Application.Autores;
 
 public interface IAutorRepository
 {
